@@ -1,8 +1,10 @@
 language: clojure
-lein: 2.7.1
+lein: 2.9.1
 cache:
   directories:
   - $HOME/.m2
+before_install:
+  - curl -sSL https://raw.githubusercontent.com/cljs-oss/canary/master/scripts/install-canary.sh | bash
 script:
   - lein test
   - lein doo node test-build once
